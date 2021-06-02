@@ -1,0 +1,64 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <ngx-header></ngx-header>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+    <nb-menu [items]="items"> </nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>
+        <h5>Edit Banner</h5>
+      </nb-card-header>
+
+      <nb-card-body>
+        <div class="container-fluid">
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Cinema Name</label>
+              <select class="form-control col-12 col-md-6 ng-pristine ng-valid ng-touched">
+                <option *ngFor="let company of lstCompany"  placeholder="Select cinema name" [(ngModel)]="Cards.companyId">
+                  {{company.cinemaName}}
+                </option>
+              </select>
+          </div>
+
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Offer Details</label>
+            <input type="text" class="form-control col-12 col-md-6" aria-describedby="emailHelp"
+              placeholder="Enter Offer Details" [(ngModel)]="Cards.offerDetail" />
+          </div>
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Expiry Date</label>
+            <input type="date" class="form-control col-12 col-md-3" aria-describedby="emailHelp"
+              placeholder="Enter Expiry Date" [(ngModel)]="Cards.expiryDate" />
+          </div>
+
+          <div class="row mb-4  ">
+            <label class="col-6 col-md-2" for="exampleInputEmail1">Upload Image</label>
+            <!-- <small class="col-12 col-md-6"> Max size 300 x 300px.</small> -->
+            <div class="form-group col-12 col-md-6 ">
+              <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+              <input name="imageString" type="file" accept="image/*" [(ngModel)]="showimg" id="imageid"
+                (change)="handleInputChange($event)" />
+              <img class="img-size img-fluid mt-2  slide" *ngIf="imageSrc" src={{imageSrc}} alt="">
+              <img class="img-size img-fluid mt-2  slide" *ngIf="!imageSrc"
+                src='http://18.221.99.84/deal8_profile/noimage.png' alt="">
+              <br>
+              <small class=""> Max size 300 x 300px.</small>
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+
+      <nb-card-footer>
+        <button nbButton size="small" class="ml-2" (click)="updateCard()" *ngIf="!loading">Add</button>
+        <button nbButton size="small" class="ml-2" (click)="updateCard()" *ngIf="loading"> <i
+            class="fa fa-spinner fa-spin"></i> Add</button>
+      </nb-card-footer>
+
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,105 @@
+<nb-layout windowMode>
+    <nb-layout-column>
+      <div class="header-box">
+      
+      
+          
+          
+            <div class="card" >
+              <div class="card-body">
+                <img src="../../../assets/images/deal final one[9].png" alt="">
+                <form>
+                  <h1 class="h3 mb-3 fw-normal ">Please sign Up</h1>
+                  <label class="visually-hidden">Company Name </label>
+                  <input
+                   
+                   name="companyName"
+                    class="form-control mb-2"
+                    placeholder="Company Name"
+                    required
+                    [(ngModel)]="signUp.companyName"
+                    
+                  />
+                  <label for="inputEmail" class="visually-hidden">address</label>
+                  <input
+                    name="address"
+                    class="form-control mb-2"
+                    placeholder="Address"
+                    required
+                    [(ngModel)]="signUp.address"
+                  
+                  />
+                  <label for="inputEmail" class="visually-hidden">MobileNo</label>
+                  <input
+                    name="mobileNo"
+                    type="number"
+                    class="form-control mb-2"
+                    placeholder="Mobile No"
+                    required
+                    [(ngModel)]="signUp.mobileNo"
+                  
+                  />
+        
+                    <small  class="form-text text-muted mb-3">Enter 10 digit number</small>
+      
+                 
+                  <label for="inputEmail" class="visually-hidden">Email address</label>
+                  <input
+                    name="email"
+                    class="form-control mb-2"
+                    placeholder="Email address"
+                    required
+                    [(ngModel)]="signUp.email"
+                    
+                  />
+                  <label for="inputEmail" class="visually-hidden">UserName</label>
+                  <input
+                    name="userName"
+                    class="form-control mb-2"
+                    placeholder="Username "
+                    required
+                    [(ngModel)]="signUp.userName"
+                    
+                  />
+                  <label for="inputPassword" class="visually-hidden">Password</label>
+                  <input
+                   name="password"
+                    class="form-control mb-2"
+                    placeholder="Password"
+                    required
+                    [(ngModel)]="signUp.password"
+                  />
+    
+                      <small  class="form-text text-muted mb-2">Use 8 or more characters with a mix of letters, numbers & symbols.</small>
+        
+                  <label for="inputEmail" class="visually-hidden">BeaconsPoint</label>
+                  <select class="form-control " name="state" [(ngModel)]="signUp.beaconsPoint"  required >
+                    <option value="">Please select Points</option>
+                    <option [value]="point" *ngFor="let point of points" >{{point}}</option>
+                 
+                   
+                  </select>
+                  <!-- <input
+                    name="beaconsPoint"
+                    class="form-control mb-2"
+                    placeholder="Beacons Point"
+                    required
+                    [(ngModel)]="signUp.beaconsPoint"
+                    
+                  />
+     -->
+        
+      
+                  <button class="w-100 btn btn-primary mt-2"  (click)="signUpUser()">Sign Up</button>
+      
+               
+                </form>
+               
+              </div>
+            </div>
+       
+          
+      </div>
+    </nb-layout-column>
+  </nb-layout>
+  

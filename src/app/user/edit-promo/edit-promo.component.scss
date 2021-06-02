@@ -1,0 +1,63 @@
+button {
+    background-color: #24b6e9 !important;
+    color: white !important;
+}
+.profile-img {
+    height: 20%;
+    width: 60%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    border-radius: 50%;
+}
+img.img-size {
+    width: 110%;
+    height: 105%;
+}
+i.far.fa-times-circle.fa-3x {
+    position: absolute;
+    left: 90%;
+    bottom: 84%;
+    color: red;
+}
+img.img-size.img-url {
+    padding-bottom: 40% !important;
+    height: 120% !important;
+}
+.opac {
+    opacity: 1;
+}
+.fas.fa-arrow-circle-up.fa-4x.opac {
+    color: #e4e4e4;
+}
+i.far.fa-check-circle.fa-2x {
+    color: #29f129;
+}
+i.fas.fa-times-circle.fa-3x {
+    position: absolute;
+    left: 90%;
+    bottom: 84%;
+}
+.status {
+    position: relative;
+    top: 60px;
+}
+.showImg {
+    display: flex;
+    flex-direction: row;
+}
+nb-sidebar.menu-sidebar.start.compacted img.profile-img.ng-star-inserted {
+    visibility: hidden;
+}
+nb-sidebar.menu-sidebar.start.compacted nb-card.status {
+    visibility: hidden;
+}
+.urll.ng-star-inserted {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 12%;
+    top: 9px;
+}
+.container-fluid {
+    height: 500px;
+}

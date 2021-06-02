@@ -1,0 +1,156 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <ngx-header></ngx-header>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+    <img class="profile-img" *ngIf="loadavatar" src={{avatar}} alt="" srcset="">
+    <img class="profile-img" *ngIf="!loadavatar" src="http://18.221.99.84/deal8_profile/profile11.png" alt="" srcset="">
+
+
+    <nb-menu [items]="items">
+    </nb-menu>
+
+
+
+    <nb-card class="status">
+      <nb-card-body>
+          <span><Strong class="ml-4">Account Status </Strong></span>
+          <span><Strong class="ml-5">{{statusUser}}</Strong></span>
+      </nb-card-body>
+  </nb-card>
+  
+  </nb-sidebar>
+  <nb-layout-column>
+
+
+    <nb-card >
+      <nb-card-header >Add promo</nb-card-header>
+      <nb-card-body >
+        <div class="container-fluid">
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">
+              <p>Beacon Points </p>
+            </label>
+            <div class=" col-12 col-md-4">
+              <select class="form-control " name="state" required [(ngModel)]='mallPoint' (change)="getImageList()">
+                <option >Please select Points</option>
+                <option [value]="point" *ngFor='let point of  dropPointList'>{{point}} </option>
+
+
+              </select>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <label class=" col-12 col-md-2" for="exampleInputEmail1">Beacon Name</label>
+            <div class="col-12 col-md-4">
+              <input type="text" class="form-control" aria-describedby="emailHelp" [value]='beaconName' readonly placeholder="Beacon Name" />
+            </div>
+
+          </div>
+          <div class="row  ml-2">
+            <div class="form-check mr-4">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" [(ngModel)]="select"
+                value="1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Image
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2"
+                [(ngModel)]="select">
+              <label class="form-check-label" for="exampleRadios2">
+                URL 
+              </label>
+            </div>
+
+          </div>
+          <div *ngIf="select==2">
+            <div class="row mb-4 mt-4" *ngFor='let point of  Arr(url_count).fill(1) ;let i = index'>
+              <label class="col-12 col-md-2" for="exampleInputEmail1">URL:-{{i+1}} </label>
+              <input type="text" class="form-control col-8 col-md-6" aria-describedby="emailHelp" [(ngModel)]="urlimage[i]"  placeholder="https://" />
+              <i class="far fa-check-circle fa-2x ml-1" (click)="postPromo(urlimage[i])" *ngIf="!loading"></i>
+              <!-- <i class="far fa-check-circle fa-2x ml-1"  [nbSpinner]="true" nbSpinnerSize="small" nbSpinnerStatus="primary" *ngIf="true"></i> -->
+              
+              <div class='spin fa-2x ' *ngIf="loading" >
+                <i class="fas fa-circle-notch fa-spin"></i>
+              </div>
+
+              <i *ngIf="i===numb22" class="fas fa-plus-circle fa-2x ml-1" (click)="add_input()"></i>
+            </div>
+            <div class="row ml-5 mt-4">
+              <div class='urll' *ngIf="select==2">
+                <div class="col-12 col-md-2 mr-5 eachurl" *ngFor='let img of listPromoImg ;'>
+                  <!-- <i class="far fa-times-circle fa-3x" (click)='deletePromo(img.imageId)'></i> -->
+                  <!-- <i class="fas fa-times-circle fa-3x" (click)='deletePromo(img.imageId)'></i> -->
+                  
+                  <img class="img-size"
+                    src={{img.url}}
+                    alt="">
+                    <button nbButton   (click)='deletePromo(img.imageId)' *ngIf="!loading"  size="small" class="ml-5 mt-2 main-btn uploadBtn mr-3">
+                     Delete </button>
+                     <button nbButton   *ngIf="loading"  size="small" class="ml-5 mt-2 main-btn uploadBtn mr-3">
+                      Delete </button>
+                </div>    
+               
+              </div>
+
+              
+    
+            </div>
+           
+          </div>
+
+          <div class="row mb-4 ml-5  mt-4" *ngIf="select==1">
+            <div class="col-12 col-md-2">
+              <div class="row" >
+                <label class="mb-4" for="exampleInputEmail1" >Promo Image </label>
+
+              </div>
+              <div class="row ml-1" >
+                <div class="form-group ">
+                  <i class="fas fa-arrow-circle-up fa-4x" (click)="fileInput.click()" *ngIf="!loading" >
+                    <input #fileInput type="file" (change)="handleInputChange($event)" style="display:none;" />
+
+                  </i>
+                  <i class="fas fa-arrow-circle-up fa-4x opac" [nbSpinner]="true" nbSpinnerSize="small" nbSpinnerStatus="primary" *ngIf="loading" >
+                   
+
+                  </i>
+                </div>
+              </div>
+              <div class="row ">
+                <p class="">Maximum 3 <br> images allowed</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-2 mr-5" *ngFor='let img of listPromoImg ;'>
+              <!-- <i class="far fa-times-circle fa-3x" (click)='deletePromo(img.imageId)'></i> -->
+              <!-- <i class="fas fa-times-circle fa-3x" (click)='deletePromo(img.imageId)'></i> -->
+              
+              <img class="img-size"
+                src={{img.url}}
+                alt="">
+                <button nbButton   (click)='deletePromo(img.imageId)' *ngIf="!loading"  size="small" class="ml-5 mt-2 main-btn uploadBtn mr-3">
+                 Delete </button>
+                 <button nbButton    *ngIf="loading"  size="small" class="ml-5 mt-2 main-btn uploadBtn mr-3">
+                  Delete </button>
+            </div>
+            <!-- <div class="col-2 mr-5">
+                      <img  class="img-size" src="https://www.elegantthemes.com/blog/wp-content/uploads/2015/02/custom-trackable-short-url-feature.png" alt="">
+                    </div>
+                    <div class="col-2 mr-5">
+                      <img  class="img-size" src="https://www.elegantthemes.com/blog/wp-content/uploads/2015/02/custom-trackable-short-url-feature.png" alt="">
+                    </div>  -->
+
+
+          </div>
+
+
+
+        </div>
+
+      </nb-card-body>
+      <!-- <nb-card-footer> <button nbButton shape="semi-round" size="small" status="info" class="ml-2">Send</button>
+      </nb-card-footer> -->
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

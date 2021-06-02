@@ -1,0 +1,77 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+      <ngx-header></ngx-header>
+    </nb-layout-header>
+    <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+      <nb-menu [items]="items"> </nb-menu>
+    </nb-sidebar>
+    <nb-layout-column>
+      <nb-card>
+        <nb-card-header>Edit User</nb-card-header>
+  
+        <nb-card-body>
+          <div class="container-fluid">
+          
+            <div class="row mb-4">
+              <label class="col-12 col-md-2" for="exampleInputEmail1">Cinema Name</label>
+              <select class="form-control col-12 col-md-6" [(ngModel)]="user.cinemaName" required>
+                <option value="">Select Cinema Name </option>
+                <option [value]= "company.id" *ngFor="let company of companyList">{{ company.name }}</option>
+              </select>
+            </div>         
+            
+            <div class="row mb-4  ">
+              <label class="col-12 col-md-2" for="exampleInputEmail1">UserName </label>
+              <input
+                type="text"
+                class="form-control  col-12 col-md-6"
+                
+                aria-describedby="emailHelp"
+                placeholder="Enter Username"
+                [(ngModel)]="user.userName"
+              />
+            </div>
+            <div class="row ">
+              <label class="col-12 col-md-2" for="exampleInputEmail1">Password</label>
+              <input
+                type="password"
+                class="form-control col-12 col-md-6"
+                
+                aria-describedby="emailHelp"
+                placeholder="Enter Password"
+                [(ngModel)]="user.password"
+              />
+  
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-2">
+  
+              </div>
+              <div class="col-12 col-md-6  mb-2">
+                <small  class="form-text text-muted">Use 8 or more characters</small>
+  
+              </div>
+            </div>
+            <div class="row mb-4 ">
+              <label class="col-12 col-md-2" for="exampleInputEmail1">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control  col-12 col-md-6"
+              
+                aria-describedby="emailHelp"
+                placeholder="Enter Confirm Password"
+                [(ngModel)]="user.confrimPassword"
+              />
+  
+            </div>
+         
+          </div>
+          
+        </nb-card-body>
+        <nb-card-footer> <button nbButton  size="small" class="ml-2" (click)="updateUser()" >Update</button>
+        </nb-card-footer>
+  
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
+  

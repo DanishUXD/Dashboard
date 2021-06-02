@@ -1,0 +1,47 @@
+
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+      </nb-layout-header>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+        
+        <img class="profile-img" *ngIf="loadavatar" src={{avatar}} alt="" srcset="">
+        <img class="profile-img" *ngIf="!loadavatar" src="http://18.221.99.84/deal8_profile/profile11.png" alt="" srcset="">
+            <nb-menu [items]="items">
+            </nb-menu>
+        
+
+
+            <nb-card class="status">
+              <nb-card-body>
+                  <span><Strong class="ml-4">Account Status </Strong></span>
+                  <span><Strong class="ml-5">{{statusUser}}</Strong></span>
+              </nb-card-body>
+          </nb-card>
+
+      </nb-sidebar>
+    <nb-layout-column>
+    
+        <nb-card>
+            <nb-card-header><h5>Beacon Points List</h5></nb-card-header>
+
+            <nb-card-body>
+              <ngx-datatable  class="bootstrap" [rowHeight]="'auto'" [selectionType]="'checkbox'" [headerHeight]="50"
+              [selectionType]="'checkbox'" [columnMode]="'force'" [rows]="rows" [footerHeight]="50" [limit]=20
+             [columns]="columns" [scrollbarH]="true"   
+            
+             >
+            
+             <ngx-datatable-column name="Point"></ngx-datatable-column>
+             <ngx-datatable-column name="Point Name"></ngx-datatable-column>
+             <ngx-datatable-column name="UUID"></ngx-datatable-column>
+
+ 
+
+           </ngx-datatable>
+              
+            </nb-card-body>
+          </nb-card>
+          
+    </nb-layout-column>
+</nb-layout>

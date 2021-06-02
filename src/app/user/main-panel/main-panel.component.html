@@ -1,0 +1,118 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+    </nb-layout-header>
+    <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+        
+            <img class="profile-img" *ngIf="loadavatar" src={{avatar}} alt="" srcset="">
+            <img class="profile-img" *ngIf="!loadavatar" src="http://18.221.99.84/deal8_profile/profile11.png" alt="" srcset="">
+ 
+      
+
+
+        <nb-menu [items]="items">
+        </nb-menu>
+
+
+        <nb-card class="status">
+            <nb-card-body>
+                <span><Strong class="ml-4">Account Status </Strong></span>
+                <span><Strong class="ml-5">{{statusUser}}</Strong></span>
+            </nb-card-body>
+        </nb-card>
+    </nb-sidebar>
+    <nb-layout-column>
+
+
+        <nb-card>
+            <nb-card-header>
+                <h5>Message board</h5>
+            </nb-card-header>
+            <nb-card-body >
+                <div class="row" class="messageRow">
+                    <div class="col">
+                        <nb-card class="messagecard" >
+                           
+                            <nb-list >
+                              <nb-list-item *ngFor="let message of messages">
+                               
+                                <nb-card class="w-100">
+                                    <nb-card-header>Title: {{ message.subject }}</nb-card-header>
+
+                                    <nb-card-body>
+                                     Message: {{message.message}}
+                                    </nb-card-body>
+                                  </nb-card>
+                              </nb-list-item>
+                            </nb-list>
+                          </nb-card>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-3 box-info mt-2">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-bookmark fa-4x" ></i>
+                            </div>
+                            <div class="col-8">
+                                <div class="row box1">
+                                    <div class="col d-flex justify-content-center ">
+                                        <p class="box1 mt-3">Total Cinema Points</p>
+        
+                                    </div>
+        
+                                </div>
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center ">
+                                        <p class="box1">{{userDetail.totalPoint}}</p>
+                                    </div>
+        
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3  d-flex justify-content-center box-info box2 mt-2 ">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-ad fa-5x"></i>
+                            </div>
+                            <div class="col-8">
+                                <p class="mt-4" routerLink="editPromo">Manage Adv <span class="banner"><br> Banner</span> </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 box-info mt-2">
+                        <div class="row">
+                            <div class="col-4">
+                                <i class="fas fa-id-card fa-4x"></i>
+                            </div>
+                            <div class="col-8 mt-2">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        Client Name:{{userDetail.userName}}
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        Company Name:{{userDetail.companyName}}
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        Join Date:{{userDetail.createDate.split(' ')[0]}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                       
+                    </div>
+                </div>
+            </nb-card-body>
+            <!-- <nb-card-footer> <button nbButton shape="semi-round" size="small" status="info" class="ml-2" >Send</button>
+            </nb-card-footer> -->
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

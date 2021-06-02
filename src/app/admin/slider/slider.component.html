@@ -1,0 +1,67 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+    </nb-layout-header>
+    <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+
+        <nb-menu [items]="items">
+        </nb-menu>
+
+    </nb-sidebar>
+    <nb-layout-column>
+
+        <nb-card>
+            <nb-card-header>
+                <h5>Slider</h5>
+            </nb-card-header>
+
+            <nb-card-body>
+                <div class="row mb-4 ml-4">
+                    <small class=""> Max size 500 x 200px.</small>
+                </div>
+
+                <div class="img-slide ">
+                    <div class="" *ngFor="let point of  Arr(num).fill(1) ;let i = index ">
+
+                        <div class="row " *ngIf="slideimage[i] ">
+                            <div class="col-2 ml-2 col-img ">
+                                <img class="slide left-side " src={{slideimage[i].sliderImage}} alt="">
+                            </div>
+                        </div>
+
+                        <div class="row mt-4" *ngIf="slideimage[i]">
+                            <div class="col-3 ">
+                                <button nbButton class="ml-5 mb-2" (click)="deleteSlide(slideimage[i].sliderId)">delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row ml-2  mr-2 uploadBox left-side" *ngIf="!slideimage[i]">
+                            <div class="col-2  ml-2   ">
+                                <div class="inner-area">
+                                    <div class="row">
+                                        <img class="main-img  main-img1"
+                                            src="http://18.221.99.84/deal8_profile/upload2.png" alt="" srcset=""><br>
+                                    </div>
+                                </div>
+                                <div class="btn-area">
+                                    <button nbButton class="main-btn uploadBtn mr-3 " (click)="fileInput.click()"
+                                        *ngIf="!loading">Upload</button>
+                                    <button nbButton class=" main-btn uploadBtn mr-3" *ngIf="loading"><i
+                                            class="fa fa-spinner fa-spin"></i>Upload</button>
+                                    <input #fileInput type="file" (change)="handleInputChange($event)"
+                                        style="display:none;" />
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+
+
+                </div>
+                <div class="form-group mt-4">
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

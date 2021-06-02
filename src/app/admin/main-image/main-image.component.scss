@@ -1,0 +1,95 @@
+button {
+    background-color: red !important;
+    color: white !important;
+}
+// .form-group.align {
+//     // position: absolute;
+//     // left: 40%;
+//     // top: 20%;
+// }
+// button.ml-1.mt-2.appearance-filled.size-medium.status-primary.shape-rectangle.nb-transition {
+//     width: 43%;
+// }
+// .slide {
+//     width: 400px;
+//     height: 400px;
+
+//     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+//     padding: 0;
+// }
+// body {
+//     background: #fff;
+// }
+// .box {
+//     transition: box-shadow 0.3s;
+//     // margin: 50px;
+//     border-radius: 10px;
+//     border: 4px dotted #ccc !important;
+//     background: #fff;
+//     float: left;
+// }
+// .box:hover {
+//     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+// }
+// img.main-img {
+//     max-width: 50%;
+// }
+// .col-5.box {
+//     background-color: #f3f8fe;
+// }
+img.main-img {
+    max-width: 50%;
+    margin-left: 24%;
+}
+.left-side {
+    width: 520px;
+    height: 440px;
+    transition: box-shadow 0.3s;
+    border-radius: 10px;
+    border: 4px dotted #ccc !important;
+    background: #fff;
+    background-color: #f3f8fe;
+}
+.left-side:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+
+.inner-area {
+    // position: absolute;
+    // left: 25%;
+    // top: 14%;
+    // right: 5%;
+    padding: 21%;
+}
+.btn-area {
+    margin-top: 7%;
+    margin-left: 18%;
+}
+.img-box {
+    width: 700px;
+    height: 500px;
+    transition: box-shadow 0.3s;
+    border-radius: 10px;
+    border: 4px dotted #ccc !important;
+    background: #fff;
+}
+@media screen and (max-width: 992px) {
+    .left-side {
+        width: 320px;
+        height: 340px;
+    }
+    .img-box {
+        width: 320px;
+        height: 340px;
+    }
+}
+// button.main-btn.appearance-filled.size-medium.status-primary.shape-rectangle.nb-transition {
+//     margin-left: 34% ;
+// }
+button.main-btn.upload.mr-5.appearance-filled.size-medium.status-primary
+    .shape-rectangle.ng-star-inserted.nb-transition {
+    margin-left: 16%;
+}
+button.delete.main-btn.appearance-filled.size-medium.shape-rectangle.nb-transition {
+    margin-left: 35%;
+}

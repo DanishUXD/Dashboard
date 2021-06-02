@@ -1,0 +1,130 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <ngx-header></ngx-header>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+    <img class="profile-img" *ngIf="loadavatar" src={{avatar}} alt="" srcset="">
+        <img class="profile-img" *ngIf="!loadavatar" src="http://18.221.99.84/deal8_profile/profile11.png" alt="" srcset="">
+
+    <nb-menu [items]="items"> </nb-menu>
+    <nb-card class="status">
+      <nb-card-body>
+        <span><Strong class="ml-4">Account Status </Strong></span>
+        <span><Strong class="ml-5">{{statusUser}}</Strong></span>
+      </nb-card-body>
+    </nb-card>
+  </nb-sidebar>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>
+        <div class="row">
+          <div class="col-8">
+            <h5>User Info </h5>
+
+          </div>
+          <div class="col-4">
+            <button nbButton  size="small"  class="ml-2 small-sc" *ngIf="!showEdit"  (click)="changeEdit()" >Edit</button>
+            <button nbButton  size="small"  class="ml-2 small-sc" *ngIf="showEdit" (click)="updateUser()    "  >Save</button>
+            <button nbButton  size="small"  class="ml-2 small-sc" *ngIf="showEdit" (click)="changeEdit()" >Cancel</button>
+
+
+          </div>
+        </div>
+
+      </nb-card-header>
+
+      <nb-card-body>
+        <div class="container-fluid">
+
+
+          <div class="row mb-4">
+            <label class="col-md-2 col-5" for="exampleInputEmail1"> <strong>User Name</strong></label>
+            <label *ngIf="!showEdit" class="col-md-6 col-6" for="exampleInputEmail1">{{user.userName}}</label>
+            <input *ngIf="showEdit"
+            type="text"
+            class="form-control  col-12 col-md-6"
+            [(ngModel)]="userChange.userName"
+            aria-describedby="emailHelp"
+            placeholder="Enter Username"
+          
+          />
+            <!-- <input
+              type="text"
+              class="form-control col-6"
+             
+              aria-describedby="emailHelp"
+              placeholder="User Name"
+              [(ngModel)]="user.userName"
+            /> -->
+          </div>
+
+          <!-- <div class="row mb-4  ">
+            <label class="col-md-2 col-5" for="exampleInputEmail1"> <strong>Email</strong></label>
+            <label class="col-md-6 col-6" for="exampleInputEmail1">{{user.email}}</label> -->
+
+            <!-- <input
+              type="email"
+              class="form-control col-6"
+             
+              aria-describedby="emailHelp"
+              placeholder="Email"
+              [(ngModel)]="user.email"
+            /> -->
+          <!-- </div> -->
+
+          <!-- <div class="row mb-4  ">
+            <label class="col-md-2 col-5" for="exampleInputEmail1"> <strong>Address</strong></label>
+            <label class="col-md-6 col-6" for="exampleInputEmail1">{{user.address}}</label> -->
+
+            <!-- <input
+              type="text"
+              class="form-control col-6"
+            
+              aria-describedby="emailHelp"
+              placeholder="Address"
+              [(ngModel)]="user.address"
+            /> -->
+          <!-- </div> -->
+          <!-- <div class="row mb-4  ">
+            <label class="col-md-2 col-5" for="exampleInputEmail1"> <strong>Mobile No</strong></label>
+            <label class="col-md-6 col-6" for="exampleInputEmail1">{{user.mobileNo}}</label> -->
+            <!-- 
+            <input
+              type="number"
+              class="form-control col-6"
+            
+              aria-describedby="emailHelp"
+              placeholder="Mobile No"
+              [(ngModel)]="user.mobileNo"
+            /> -->
+          <!-- </div> -->
+          <div class="row mb-4  ">
+            <label class="col-md-2 col-5" for="exampleInputEmail1"> <strong>Company Name</strong></label>
+            <label class="col-md-6 col-6" for="exampleInputEmail1">{{user.companyName}}</label>
+
+        
+            <!-- <input
+                type="text"
+                class="form-control col-6"
+              
+                aria-describedby="emailHelp"
+                placeholder="Company Name"
+                [(ngModel)]="user.companyName"
+              /> -->
+          </div>
+          <!-- <div class="row mb-4  ">
+            <label class="col-4 col-md-2 mt-4" for="exampleInputEmail1"><strong>Upload Profile Image </strong></label>
+            <div class="form-group col-4 col-md-4 mt-4"> -->
+              <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+              <!-- <input name="imageString" type="file" accept="image/*" (change)="handleInputChange($event)" />
+            </div>
+          </div> -->
+
+        </div>
+      </nb-card-body>
+      <!-- <nb-card-footer> <button nbButton shape="semi-round" size="small" status="info" class="ml-2"  >Save</button>
+      </nb-card-footer> -->
+
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

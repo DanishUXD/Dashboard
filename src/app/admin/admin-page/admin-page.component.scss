@@ -1,0 +1,16 @@
+button {
+    background-color: red !important;
+    color: white !important;
+}
+// button.ml-2.appearance-filled.btn-disabled.size-small.status-info.shape-semi-round.nb-transition{
+//     color: red;
+// }
+@media screen and (max-width: 992px) {
+    .ml-2.small-sc {
+        margin-top: 7% !important;
+    }
+}
+nb-layout-column {
+    background-color: white !important;
+}
+

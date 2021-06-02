@@ -1,0 +1,55 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+      </nb-layout-header>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+        
+ 
+            <nb-menu [items]="items">
+            </nb-menu>
+         
+      </nb-sidebar>
+    <nb-layout-column>
+       
+          <nb-card>
+            <nb-card-header>
+              <div class="row">
+                <div class="col-12 col-md-8">
+                  <h5>Cinemas</h5>
+                </div>
+                <div class="col-12 col-md-4">
+                  <button nbButton  size="small"  class="ml-2" routerLink="cinema-add" >Add</button>
+                  <button nbButton  size="small"  class="ml-2" routerLink="cinema-edit" [disabled]=edit>Edit</button>
+                  <button nbButton  size="small"  class="ml-2"(click)="delete()" > Delete</button>
+                </div>
+              </div>
+            </nb-card-header>
+
+            <nb-card-body>
+              
+              <ngx-datatable  class="bootstrap" [rowHeight]="'auto'" [selectionType]="'checkbox'" [headerHeight]="50"
+              [selectionType]="'checkbox'" [columnMode]="'force'" [rows]="rows" [footerHeight]="50" [limit]=5
+             [columns]="columns" [scrollbarH]="true" (select)="onSelect($event)" [selected]="selected"
+            
+             [externalPaging]="true"
+             [count]="page.count"
+             [offset]="page.offset"
+             [limit]="page.limit"
+             (page)="setPage($event)"
+             >
+             <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                 [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true"
+                 >
+             </ngx-datatable-column>
+             <ngx-datatable-column name="Cinema Name"></ngx-datatable-column>
+             <!-- <ngx-datatable-column name="Business Category"></ngx-datatable-column> -->
+             <!-- <ngx-datatable-column name="Points"></ngx-datatable-column> -->
+             <ngx-datatable-column name="Mobile No"></ngx-datatable-column>
+             <ngx-datatable-column name="Email"></ngx-datatable-column>
+             <ngx-datatable-column name="Address"></ngx-datatable-column>
+             <!-- <ngx-datatable-column name="State"></ngx-datatable-column> -->
+           </ngx-datatable>
+            </nb-card-body>
+          </nb-card>
+    </nb-layout-column>
+</nb-layout>

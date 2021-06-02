@@ -1,0 +1,71 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+      </nb-layout-header>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+        
+ 
+            <nb-menu [items]="items">
+            </nb-menu>
+         
+      </nb-sidebar>
+    <nb-layout-column>
+       
+          <nb-card>
+            <nb-card-header>
+              <div class="row">
+                <div class="col-5 col-md-8">
+                  <h5>Dashboard User</h5>
+                </div>
+                <div class="col-12 col-md-4">
+                  <button nbButton  size="small"  class="ml-2 small-sc " routerLink="add-user" >Add</button>
+                  <button nbButton  size="small"  class="ml-2 small-sc" routerLink="edit-user" [disabled]=edit>Edit</button>
+                  <button nbButton  size="small"  class="ml-2 small-sc" (click)="deleteUser()"> Delete</button>
+                </div>
+              </div>
+            </nb-card-header>
+
+            <nb-card-body>
+              
+              <ngx-datatable  class="bootstrap" [rowHeight]="'auto'" [selectionType]="'checkbox'" [headerHeight]="50"
+              [selectionType]="'checkbox'" [columnMode]="'force'" [rows]="rows" [footerHeight]="50" 
+             [columns]="columns" [scrollbarH]="true"    [selected]="selected"(select)="onSelect($event)" 
+             [limit]="15"
+             >
+             
+                <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                    [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true"
+                    >
+                </ngx-datatable-column>
+                <ngx-datatable-column name="User Name"></ngx-datatable-column>
+                
+                <!-- <ngx-datatable-column name="Total Point"></ngx-datatable-column> -->
+              
+        
+                <ngx-datatable-column name="Status">
+
+                  <ng-template #buttonsTemplate let-row="row" let-value="value" ngx-datatable-cell-template>
+                    
+                    <button nbButton  size="small" class="ml-2" (click)="changeStatus(row.userId)" >
+                      
+                      {{row.status?'Active':'Inactive'}}</button>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Cinema Name"></ngx-datatable-column>
+
+              </ngx-datatable>
+            </nb-card-body>
+          </nb-card>
+
+          <!-- <nb-card size="medium">
+            <nb-card-header>
+              Some fruits
+            </nb-card-header>
+            <nb-list>
+              <nb-list-item *ngFor="let i of rows">
+                {{ i.userName }}
+              </nb-list-item>
+            </nb-list>
+          </nb-card> -->
+    </nb-layout-column>
+</nb-layout>

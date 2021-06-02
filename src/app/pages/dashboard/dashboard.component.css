@@ -1,0 +1,34 @@
+.nb-card {
+    width: 100% !important;
+}
+.main-box p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.box {
+    width: 225px;
+    margin-top: 20px;
+    height: 100%;
+    border: 1px solid #d8d1d1;
+    border-radius: 6px;
+    padding: 7px 8px 9px 10px;
+    box-shadow: 0 2px 5px rgba(32, 33, 36, 0.28);
+}
+.box:hover {
+    box-shadow: 0 0 7px rgba(32, 33, 36, 0.28);
+    border: 1px solid #bbb3b3;
+    cursor: pointer;
+}
+.text-style-left p {
+    opacity: 0.7;
+    font-size: 13px;
+    font-weight: 700;
+}
+.text-style-right b {
+    font-size: 15px;
+}
+.progress {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}

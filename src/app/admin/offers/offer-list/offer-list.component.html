@@ -1,0 +1,46 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+      </nb-layout-header>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start> 
+            <nb-menu [items]="items">
+            </nb-menu>
+      </nb-sidebar>
+    <nb-layout-column>
+       
+          <nb-card>
+            <nb-card-header>
+              <div class="row">
+                <div class="col-12 col-md-8">
+                  <h5>Card Banners</h5>
+                </div>
+                <div class="col-12 col-md-4">
+                  <button nbButton  size="small"  class="ml-2" routerLink="addCard" >Add</button>
+                  <button nbButton  size="small"  class="ml-2" routerLink="editCard" [disabled]=edit>Edit</button>
+                  <button nbButton  size="small"  class="ml-2"(click)="deleteCard()" > Delete</button>
+                </div>
+              </div>
+            </nb-card-header>
+
+            <nb-card-body>
+              
+            <ngx-datatable  class="bootstrap" [rowHeight]="'auto'" [selectionType]="'checkbox'" [headerHeight]="50" [selectionType]="'checkbox'" [columnMode]="'force'" [rows]="rows" [footerHeight]="50" [limit]=5
+                [columns]="columns" [scrollbarH]="true"   (select)="onSelect($event)"  [selected]="selected"
+
+                >
+                <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true">
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Offer Detail" ></ngx-datatable-column>
+                <ngx-datatable-column name="Expiry Date" ></ngx-datatable-column>
+                <ngx-datatable-column name="Image Url" ></ngx-datatable-column>
+               </ngx-datatable>
+            </nb-card-body>
+          </nb-card>
+    </nb-layout-column>
+</nb-layout>
+
+<!-- [externalPaging]="true"
+[count]="page.count"
+[offset]="page.offset"
+[limit]="page.limit"
+(page)="setPage($event)" -->

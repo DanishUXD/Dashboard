@@ -1,0 +1,109 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+    </nb-layout-header>
+    <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+
+
+        <nb-menu [items]="items">
+        </nb-menu>
+
+    </nb-sidebar>
+    <nb-layout-column>
+
+        <nb-card>
+            <nb-card-header>
+                <h5>Main Image</h5>
+            </nb-card-header>
+
+            <nb-card-body>
+                <div class="row mb-4 ml-4">
+                    <small class=""> Max size 500 x 700px</small>
+
+                </div>
+
+                <!-- <div class="container-fluid">
+                    <div class="row "> 
+                        <div class="col-12 col-md-5  box ">
+                            <div class="form-group align ">
+                                <div class="row">
+                                  <img class="main-img" src="http://18.221.99.84/deal8_profile/upload2.png" alt="" srcset="">
+                                  
+                                </div>
+                                <div class="row " >
+                                    <button nbButton  status="primary" class="ml-1 mt-2 main-btn " (click)="fileInput.click()" *ngIf="!loading" >Upload</button>
+                                    <button nbButton  status="primary" class="ml-1 mt-2 main-btn " *ngIf="loading" ><i class="fa fa-spinner fa-spin" ></i>Upload</button>
+                                    <input #fileInput type="file" (change)="handleInputChange($event)" style="display:none;" />
+                                </div>
+                                <div class="row">
+                                    <button nbButton  status="primary" class="ml-1 mt-2 main-btn " (click)="bannerdelete()"  >Delete</button>
+
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+                        <div class="col-12 col-md-5" *ngIf="bannerimg">
+                            <img class="img-size img-url slide box" src={{bannerimg}} alt="">
+                        </div>
+                        <div class="col-12 col-md-5 " *ngIf="!bannerimg">
+                            <img class="img-size img-url slide box " src="http://18.221.99.84/deal8_profile/noimage.png" alt="">
+                        </div>
+
+                    </div>
+                  
+
+                </div> -->
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div *ngIf="!bannerimg" class="col-12 col-md-6">
+                            <div class="left-side">
+                                <div class="inner-area">
+                                    <div class="row">
+
+                                        <img class="main-img" src="http://18.221.99.84/deal8_profile/upload2.png" alt=""
+                                            srcset=""><br>
+
+
+
+                                    </div>
+                                    <div class="btn-area">
+                                        <button nbButton status="primary" class="main-btn upload ml-5 "
+                                            (click)="fileInput.click()" *ngIf="!loading">Upload</button>
+                                        <button nbButton status="primary" class=" main-btn upload ml-4" *ngIf="loading"><i
+                                                class="fa fa-spinner fa-spin"></i>Upload</button>
+                                        <input #fileInput type="file" (change)="handleInputChange($event)"
+                                            style="display:none;" />
+                                        <!-- <button nbButton status="primary" class=" main-btn "
+                                            (click)="bannerdelete()">Delete</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="bannerimg" class="col-12 col-md-6">
+                            <div class="" *ngIf="bannerimg">
+                                <img class="banner-img img-box" src={{bannerimg}} alt="" width="520" height="440">
+                            </div>
+                            <div class="" *ngIf="!bannerimg">
+                                <img class="banner-img img-box" src="http://18.221.99.84/deal8_profile/noimage.png"
+                                    alt="" width="520" height="440">
+                            </div>
+                            <div class="row mt-4">
+                                <button nbButton class="delete main-btn "
+                                            (click)="bannerdelete()">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </nb-card-body>
+            <!-- <nb-card-footer>
+            </nb-card-footer> -->
+        </nb-card>
+
+    </nb-layout-column>
+</nb-layout>

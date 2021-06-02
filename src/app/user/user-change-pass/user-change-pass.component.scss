@@ -1,0 +1,21 @@
+button {
+    background-color: #24b6e9 !important;
+    color: white !important;
+}
+.profile-img {
+    height: 20%;
+    width: 60%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    border-radius: 50%;
+}
+.status {
+    position: relative;
+    top: 60px;
+}
+nb-sidebar.menu-sidebar.start.compacted img.profile-img.ng-star-inserted {
+    visibility: hidden;
+}
+nb-sidebar.menu-sidebar.start.compacted nb-card.status {
+    visibility: hidden;
+}

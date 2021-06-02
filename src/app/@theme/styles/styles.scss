@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+// themes - our custom or/and out of the box themes
+@import 'themes';
+
+// framework component themes (styles tied to theme variables)
+@import '~@nebular/theme/styles/globals';
+@import '~@nebular/auth/styles/all';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/grid';
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './layout';
+@import './overrides';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+  @include nb-auth-global();
+
+  @include ngx-layout();
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  @include nb-overrides();
+};
+// nb-sidebar.menu-sidebar.start {
+//   background-color: #383e53;
+// }
+span.menu-title {
+  color: black;
+}
+nb-icon.menu-icon.ng-star-inserted {
+  color: red !important;
+}
+.nb-theme-default nb-menu .menu-item {
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.nb-theme-default nb-menu .menu-group, .nb-theme-default nb-menu .menu-item a {
+
+  font-size: 0.9rem;
+  font-weight: normal;
+  background-color: white;
+  
+}
+
+.nb-theme-default nb-layout .layout {
+  background-color: white !important;
+}
+
+.ngx-datatable .datatable-footer .datatable-footer-inner {
+  background-color: white;
+  color: black;
+}
+

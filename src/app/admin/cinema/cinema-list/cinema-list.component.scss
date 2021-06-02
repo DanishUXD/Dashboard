@@ -1,0 +1,9 @@
+button {
+    background-color: red !important;
+    color: white !important;
+}
+@media screen and (max-width: 992px) {
+    .ml-2.small-sc {
+        margin-top: 7% !important;
+    }
+}

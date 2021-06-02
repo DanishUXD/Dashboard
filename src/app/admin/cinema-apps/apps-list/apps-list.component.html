@@ -1,0 +1,72 @@
+<nb-layout windowMode>
+    <nb-layout-header fixed>
+        <ngx-header></ngx-header>
+      </nb-layout-header>
+      <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start> 
+            <nb-menu [items]="items">
+            </nb-menu>
+      </nb-sidebar>
+    <nb-layout-column>
+       
+          <nb-card>
+            <nb-card-header>
+              <div class="row">
+                <div class="col-12 col-md-8">
+                  <h5>Cinema Apps</h5>
+                </div>
+                <div class="col-12 col-md-4">
+                  <button nbButton  size="small"  class="ml-2" routerLink="apps-add" >Add</button>
+                  <button nbButton  size="small"  class="ml-2" routerLink="apps-edit" [disabled]=edit>Edit</button>
+                  <button nbButton  size="small"  class="ml-2"(click)="deleteApps()" > Delete</button>
+                </div>
+              </div>
+            </nb-card-header>
+
+            <nb-card-body>
+              
+            <ngx-datatable  class="bootstrap " [rowHeight]="'auto'" [selectionType]="'checkbox'" [headerHeight]="50" [selectionType]="'checkbox'" [columnMode]="'force'" [rows]="rows" [footerHeight]="50" [limit]=5
+                [columns]="columns" [scrollbarH]="true"   (select)="onSelect($event)"  [selected]="selected"
+
+                >
+                <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false" [draggable]="false" [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true">
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Name"></ngx-datatable-column>
+                <ngx-datatable-column name="Details"></ngx-datatable-column>
+
+                <!-- <ngx-datatable-column name="Logo"></ngx-datatable-column> -->
+               
+                <ngx-datatable-column name="Add Slider">
+                  <ng-template #buttonsTemplate let-row="row" let-value="value" ngx-datatable-cell-template>
+                    <button nbButton  size="small" class="ml-2" (click)="onSaveAppId(row.appId)" routerLink="/admin/slider" >Add Slider</button>
+                  </ng-template>
+                </ngx-datatable-column>
+                
+                <ngx-datatable-column name="Add Main Banner">
+                <ng-template #buttonsTemplate let-row="row" let-value="value" ngx-datatable-cell-template>
+                  <button nbButton  size="small" class="ml-2" (click)="onSaveAppId(row.appId)" routerLink="/admin/main-image" > Add Main Banner</button>
+                </ng-template>
+                </ngx-datatable-column>
+
+                <ngx-datatable-column name="Add Card Banner">
+                  <ng-template #buttonsTemplate let-row="row" let-value="value" ngx-datatable-cell-template>
+                    <button nbButton  size="small" class="ml-2" (click)="onSaveAppId(row.appId)" routerLink="/admin/offer"> Add Card Banner</button>
+                  </ng-template>
+                  </ngx-datatable-column>
+                
+                  <ngx-datatable-column name="Theam Color"></ngx-datatable-column>
+                  <ngx-datatable-column name="Header Color"></ngx-datatable-column>
+                  <ngx-datatable-column name="Text Color"></ngx-datatable-column>
+                  <ngx-datatable-column name="Button Color"></ngx-datatable-column>                
+
+                <!-- <ngx-datatable-column name="movieId"></ngx-datatable-column> -->
+               </ngx-datatable>
+            </nb-card-body>
+          </nb-card>
+    </nb-layout-column>
+</nb-layout>
+
+<!-- [externalPaging]="true"
+[count]="page.count"
+[offset]="page.offset"
+[limit]="page.limit"
+(page)="setPage($event)" -->

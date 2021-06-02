@@ -1,0 +1,100 @@
+<nb-layout windowMode>
+  <nb-layout-header fixed>
+    <ngx-header></ngx-header>
+  </nb-layout-header>
+  <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive start>
+    <nb-menu [items]="items"> </nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <nb-card>
+      <nb-card-header>
+        <h5>Add Apps</h5>
+      </nb-card-header>
+
+      <nb-card-body>
+        <div class="container-fluid">
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Cinema Name</label>
+              <select class="form-control col-12 col-md-6 ng-pristine ng-valid ng-touched">
+                <option *ngFor="let company of lstCompany"  placeholder="Select cinema name" [(ngModel)]="Apps.companyId">
+                  {{company.cinemaName}}
+                </option>
+              </select>
+          </div>
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">App Name</label>
+            <input type="text" class="form-control col-12 col-md-6" aria-describedby="emailHelp"
+              placeholder="Enter App Name" [(ngModel)]="Apps.name" />
+          </div>
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Details</label>
+            <input type="text" class="form-control col-12 col-md-6" aria-describedby="emailHelp"
+              placeholder="Enter App Detials" [(ngModel)]="Apps.details" />
+          </div>
+
+          <!--           
+          <div class="row mb-4  ">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Email Address</label>
+            <input type="text" class="form-control col-12 col-md-6" aria-describedby="emailHelp"
+              placeholder="Enter Email " [(ngModel)]="company.email" />
+          </div> -->
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Theam Color</label>
+            <input type="color" class="form-control col-12 col-md-2" value="#ff0000" [(ngModel)]="Apps.theamColor"
+              aria-describedby="emailHelp" placeholder="pick color" />
+            <small class="col-12 col-md-6"> Pick theam color</small>
+          </div>
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Header Color</label>
+            <input type="color" class="form-control col-12 col-md-2" value="#ff0000" [(ngModel)]="Apps.headerColor"
+              aria-describedby="emailHelp" placeholder="pick color" />
+            <small class="col-12 col-md-6"> pick header color</small>
+          </div>
+
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Text Color</label>
+            <input type="color" class="form-control col-12 col-md-2" value="#ff0000" [(ngModel)]="Apps.textColor"
+              aria-describedby="emailHelp" placeholder="pick color" />
+            <small class="col-12 col-md-6"> pick text color</small>
+          </div>
+
+          
+          <div class="row mb-4">
+            <label class="col-12 col-md-2" for="exampleInputEmail1">Button Color</label>
+            <input type="color" class="form-control col-12 col-md-2" value="#ff0000" [(ngModel)]="Apps.buttonColor"
+              aria-describedby="emailHelp" placeholder="pick color" />
+            <small class="col-12 col-md-6"> pick button color</small>
+          </div>
+
+
+          <div class="row mb-4  ">
+            <label class="col-6 col-md-2" for="exampleInputEmail1">Upload Logo</label>
+            <!-- <small class="col-12 col-md-6"> Max size 300 x 300px.</small> -->
+            <div class="form-group col-12 col-md-6 ">
+              <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+              <input name="imageString" type="file" accept="image/*" [(ngModel)]="showimg" id="imageid"
+                (change)="handleInputChange($event)" />
+              <img class="img-size img-url mt-2  slide" *ngIf="imageSrc" src={{imageSrc}} alt="">
+              <img class="img-size img-url mt-2  slide" *ngIf="!imageSrc"
+                src='http://18.221.99.84/deal8_profile/noimage.png' alt="">
+              <br>
+              <small class=""> Max size 300 x 300px.</small>
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+
+      <nb-card-footer>
+        <button nbButton size="small" class="ml-2" (click)="addCinemaApp()" *ngIf="!loading">Add</button>
+        <button nbButton size="small" class="ml-2" (click)="addCinemaApp()" *ngIf="loading"> <i
+            class="fa fa-spinner fa-spin"></i> Add</button>
+      </nb-card-footer>
+
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>

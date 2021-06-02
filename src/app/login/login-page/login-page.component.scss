@@ -1,0 +1,55 @@
+.header-box {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head {
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 30px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+}
+.card {
+    width: 30%;
+    margin-top: 10%;
+}
+@media screen and (max-width: 992px) {
+    .card {
+        width: 90%;
+        margin-top: 10%;
+    }
+}
+img {
+    margin-left: 14%;
+}
+h1.fw-normal {
+    margin-left: 33%;
+}
+button {
+    background-color: #f61313 !important;
+    color: white !important;
+}
+.back {
+    // background: rgb(0, 0, 0) !important;
+    // background: linear-gradient(0deg, rgba(0, 0, 0, 1) 8%, rgba(89, 9, 149, 1) 46%) !important;
+    // background-image: url('https://krot.info/uploads/posts/2021-02/thumbs/1613588472_37-p-goluboi-fon-s-liniyami-38.jpg');
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+    background: #ffffff;
+}
+// .form-control {
+//     border-radius: 1rem;
+// }
+img.logoMall {
+    position: relative;
+    right: 22%;
+    width: 60%;
+}
+.head {
+    color: #000;
+    font-size: xxx-large;
+    
+    }

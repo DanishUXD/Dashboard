@@ -1,0 +1,57 @@
+button {
+    background-color: #24b6e9 !important;
+}
+.profile-img {
+    height: 20%;
+    width: 60%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    border-radius: 50%;
+}
+.box-info {
+    margin-left: 6%;
+    background-color: #24b6e9;
+    color: white;
+    height: 100px;
+}
+.box-info p {
+    color: white;
+}
+.box2 p {
+    font-size: 30px;
+    cursor: pointer;
+}
+.box1 {
+    font-size: 20px;
+}
+.status {
+    position: relative;
+    top: 60px;
+}
+nb-card.messagecard {
+    height: 468px;
+}
+nb-list-item.ng-star-inserted {
+    height: 160px;
+    padding-bottom: 0;
+}
+nb-sidebar.menu-sidebar.start.compacted img.profile-img.ng-star-inserted {
+    visibility: hidden;
+}
+nb-sidebar.menu-sidebar.start.compacted nb-card.status {
+    visibility: hidden;
+}
+span.banner {
+    position: relative;
+    top: 10px;
+    left: 26%;
+}
+i.fas.fa-ad.fa-5x {
+    margin-top: 16%;
+}
+i.fas.fa-bookmark.fa-4x {
+    margin-top: 19%;
+}
+i.fas.fa-id-card.fa-4x {
+    margin-top: 21%;
+}

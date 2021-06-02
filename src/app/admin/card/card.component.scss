@@ -1,0 +1,77 @@
+button {
+    background-color: red !important;
+    color: white !important;
+}
+.slide {
+    width: 400px;
+    height: 200px;
+
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    padding: 0;
+}
+// max-col{
+//     height: 120% !important;
+// }
+.img-slide {
+    display: flex;
+    flex-direction: row;
+}
+.col-img {
+    max-width: 60%;
+}
+@media screen and (max-width: 992px) {
+    .col-img {
+        max-width: 10%;
+    }
+    .img-slide {
+        flex-wrap: wrap;
+    }
+}
+button.mr-4.appearance-filled.size-small.shape-semi-round.nb-transition {
+    margin-left: 182%;
+}
+
+.buttonload {
+    background-color: #4caf50; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+}
+.uploadBox {
+    height: 200px;
+    width: 400px;
+}
+img.main-img {
+    max-width: 50%;
+    margin-left: 24%;
+}
+img.main-img {
+    max-width: 246%;
+    margin-left: 157%;
+    margin-top: 86%;
+}
+button.main-btn.mr-3.appearance-filled.size-medium.shape-rectangle.ng-star-inserted.nb-transition {
+    margin-left: 330%;
+    margin-top: 100%;
+}
+.left-side {
+    transition: box-shadow 0.3s;
+    border-radius: 10px;
+    border: 4px dotted #ccc !important;
+    background: #fff;
+    background-color: #f3f8fe;
+}
+button.main-btn.uploadBtn.mr-3.appearance-filled.size-medium.status-primary
+    .shape-rectangle.ng-star-inserted.nb-transition {
+    background-color: #3399db !important;
+}
+.ml-5,
+.mx-5 {
+    margin-left: 10rem !important;
+}
+button.main-btn.uploadBtn.mr-3.appearance-filled.size-medium.status-basic
+    .shape-rectangle.ng-star-inserted.nb-transition {
+    margin-top: 100% !important;
+    margin-left: 340% !important;
+}
